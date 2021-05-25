@@ -1,4 +1,5 @@
 # Esercizi-scuola
+Tradotto con Reverso:
 Episodio 1 To Choromatsu
 　Il primo Choromatsu è morto il 14 gennaio 2007. L'età delle scimmie giapponesi era di 29 anni e l'età degli umani era di quasi 100 anni.
 　Era
