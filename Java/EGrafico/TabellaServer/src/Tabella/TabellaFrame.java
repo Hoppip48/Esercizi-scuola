@@ -1,7 +1,9 @@
 package Tabella;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -46,6 +48,14 @@ public class TabellaFrame extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel1.setText("Copie");
@@ -288,6 +298,43 @@ public class TabellaFrame extends javax.swing.JFrame {
         jTextField11.setText("");
         jTextField12.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        //sbagliato evento
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        try {
+            PrintWriter pw = new PrintWriter(new File("libri2.txt"));
+            PrintWriter pww = new PrintWriter(new File("editore2.txt"));
+            String s="";
+            for(int i=0;i<raichu.getRowCount();i++){
+                for(int j=0;j<=raichu.getColumnCount()-1;j++){
+                    if(j==raichu.getColumnCount()-1)
+                        s += raichu.getValueAt(i, j);
+                    else
+                        s += raichu.getValueAt(i, j)+",";
+                }
+                pw.println(s);
+                s="";
+            }
+            for(int i=0;i<modello.getRowCount();i++){
+                for(int j=0;j<=modello.getColumnCount()-1;j++){
+                    if(j==modello.getColumnCount()-1)
+                        s += modello.getValueAt(i, j);
+                    else
+                        s += modello.getValueAt(i, j)+",";
+                }
+                pww.println(s);
+                s="";
+            }
+            System.out.println("regigigas");
+            pw.close();
+            pww.close();
+        } catch (FileNotFoundException ex) {
+            System.out.println("que");
+        }
+    }//GEN-LAST:event_formWindowClosing
 
     private void settaTavola() {
         try {
