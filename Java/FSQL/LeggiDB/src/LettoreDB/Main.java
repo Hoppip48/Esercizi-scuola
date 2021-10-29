@@ -58,7 +58,7 @@ public class Main {
             //Inserisci valori
             System.out.println("creando db");
             String[] csv=new String[5];
-            Scanner sc = new Scanner(new File("C:\\Users\\franc\\IdeaProjects\\LeggiDB\\src\\LettoreDB\\comuni-localita-cap-italia.csv"));
+            Scanner sc = new Scanner(new File("LeggiDB\\src\\LettoreDB\\comuni-localita-cap-italia.csv"));
             sc.nextLine();
             do {
                 csv=sc.nextLine().split(",");
