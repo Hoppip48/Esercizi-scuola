@@ -1,1 +1,8 @@
+Progetto:
+Un sito di una vacanza fra amici, ognugno deve poter accedere con proprie credenziali e depositare una somma di denare
 
+Partecipanti:
+Hoppip: Permeanza dati
+Babayaga: Script
+Natale: Pagina HTML
+Napli: Documentazione
